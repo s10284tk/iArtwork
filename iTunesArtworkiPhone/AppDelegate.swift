@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-  var size: Int = 0
+  var userDefaults = UserDefaults.standard
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
@@ -35,7 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func applicationDidBecomeActive(_ application: UIApplication) {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    userDefaults.register(defaults: ["size": 0])
+    userDefaults.register(defaults: ["genre": 0])
+    userDefaults.register(defaults: ["country": 0])
   }
 
   func applicationWillTerminate(_ application: UIApplication) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hgD-hj-xbl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ymm-il-t0b">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--iArtwork-->
+        <!--Music-->
         <scene sceneID="7YB-yW-4aB">
             <objects>
-                <tableViewController storyboardIdentifier="Main" title="iArtwork" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bbT-Zm-vtw" customClass="TableViewController" customModule="iTunesArtworkiPhone" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Main" title="Music" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bbT-Zm-vtw" customClass="TableViewController" customModule="iTunesArtworkiPhone" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="YhH-gv-vmy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,7 @@
                             <outlet property="delegate" destination="bbT-Zm-vtw" id="nnb-1J-1su"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="iArtwork" id="ZzM-Hs-nY6">
+                    <navigationItem key="navigationItem" title="Music" id="ZzM-Hs-nY6">
                         <barButtonItem key="rightBarButtonItem" style="done" id="gVe-bT-Jq6">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y4o-XP-xOz">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
@@ -85,7 +85,83 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PS3-Eu-BZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="144.3778110944528"/>
+            <point key="canvasLocation" x="1065" y="151"/>
+        </scene>
+        <!--Movie-->
+        <scene sceneID="cPv-Qe-Gat">
+            <objects>
+                <tableViewController title="Movie" id="8B2-df-4ef" customClass="MovieViewController" customModule="iTunesArtworkiPhone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="l1V-Vm-Iva">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="e2M-LJ-rSu">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="8B2-df-4ef" id="Cck-QJ-Lxc"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" id="8tZ-VX-Vs6" customClass="MovieCell" customModule="iTunesArtworkiPhone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8tZ-VX-Vs6" id="sQX-hG-eX2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ox7-Fi-uAZ">
+                                            <rect key="frame" x="5" y="5" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="O7F-LP-ChQ"/>
+                                                <constraint firstAttribute="width" constant="80" id="V4j-at-Nyx"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oo-dc-It7">
+                                            <rect key="frame" x="90" y="5" width="280" height="79.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ox7-Fi-uAZ" firstAttribute="top" secondItem="sQX-hG-eX2" secondAttribute="top" constant="5" id="5t4-aP-v54"/>
+                                        <constraint firstAttribute="trailing" secondItem="3oo-dc-It7" secondAttribute="trailing" constant="5" id="63s-DE-Wkn"/>
+                                        <constraint firstItem="3oo-dc-It7" firstAttribute="top" secondItem="sQX-hG-eX2" secondAttribute="top" constant="5" id="9Wz-B3-XMT"/>
+                                        <constraint firstAttribute="bottom" secondItem="3oo-dc-It7" secondAttribute="bottom" constant="5" id="Xhy-0g-ebN"/>
+                                        <constraint firstItem="Ox7-Fi-uAZ" firstAttribute="leading" secondItem="sQX-hG-eX2" secondAttribute="leading" constant="5" id="rUE-gL-vSd"/>
+                                        <constraint firstItem="3oo-dc-It7" firstAttribute="leading" secondItem="Ox7-Fi-uAZ" secondAttribute="trailing" constant="5" id="rX6-LK-Ojm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="itemImageView" destination="Ox7-Fi-uAZ" id="QlF-r2-4rH"/>
+                                    <outlet property="trackTitle" destination="3oo-dc-It7" id="IIl-tM-1Xu"/>
+                                    <segue destination="tZB-S4-7IE" kind="show" id="3sq-au-9hx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8B2-df-4ef" id="OD1-aX-XbR"/>
+                            <outlet property="delegate" destination="8B2-df-4ef" id="RdN-Ss-giQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Movie" id="C7L-6T-6nV">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="qGz-Mt-sI7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kZ0-6G-m9H">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="設定"/>
+                                <connections>
+                                    <segue destination="KiQ-RD-pnO" kind="show" id="8eT-79-8NC"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBM-Qe-ARF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1069.5999999999999" y="846.9265367316342"/>
         </scene>
         <!--画像詳細-->
         <scene sceneID="sF6-9D-bBw">
@@ -133,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwp-68-goc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="149"/>
+            <point key="canvasLocation" x="2838" y="795"/>
         </scene>
         <!--設定-->
         <scene sceneID="DgN-qE-ZUL">
@@ -177,13 +253,12 @@
                     </tableView>
                     <connections>
                         <segue destination="hqz-jK-cxE" kind="show" identifier="size" id="c4F-RT-3Fv"/>
-                        <segue destination="6dO-nL-Jjs" kind="show" identifier="genre" id="rMN-de-6fM"/>
                         <segue destination="Mvs-3V-ShL" kind="show" identifier="country" id="zLZ-hU-nTj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYQ-z2-6cZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="-598"/>
+            <point key="canvasLocation" x="2223" y="-54"/>
         </scene>
         <!--国を設定-->
         <scene sceneID="VTQ-oa-a7I">
@@ -228,52 +303,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Dx-Y2-Fs1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680" y="-1936"/>
-        </scene>
-        <!--ジャンルを設定-->
-        <scene sceneID="EdQ-CY-99n">
-            <objects>
-                <tableViewController title="ジャンルを設定" id="6dO-nL-Jjs" customClass="GenreTableViewController" customModule="iTunesArtworkiPhone" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="T6V-dT-lIu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="genreCell" id="lbu-Ns-hCX" customClass="GenreCell" customModule="iTunesArtworkiPhone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lbu-Ns-hCX" id="OR3-xY-W4J">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBg-Mz-7b9">
-                                            <rect key="frame" x="18" y="13" width="339" height="17.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="oBg-Mz-7b9" secondAttribute="bottom" constant="5" id="Bfl-NH-nrA"/>
-                                        <constraint firstItem="oBg-Mz-7b9" firstAttribute="top" secondItem="OR3-xY-W4J" secondAttribute="topMargin" constant="5" id="ah3-PN-oTX"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="oBg-Mz-7b9" secondAttribute="trailing" constant="10" id="ie0-ek-RW0"/>
-                                        <constraint firstItem="oBg-Mz-7b9" firstAttribute="leading" secondItem="OR3-xY-W4J" secondAttribute="leadingMargin" constant="10" id="uWh-Qo-kIM"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="genreLabel" destination="oBg-Mz-7b9" id="cHa-4k-rtq"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="6dO-nL-Jjs" id="px3-Fz-ZFe"/>
-                            <outlet property="delegate" destination="6dO-nL-Jjs" id="Z81-E9-goo"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="65i-cM-5Pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2675" y="-1285"/>
+            <point key="canvasLocation" x="3057" y="-733"/>
         </scene>
         <!--画像のサイズを設定-->
         <scene sceneID="mrw-DX-iWX">
@@ -318,12 +348,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W08-Sq-9hV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2668" y="-599"/>
+            <point key="canvasLocation" x="3057" y="17"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Music-->
         <scene sceneID="F2Z-fP-cat">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hgD-hj-xbl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Music" id="tq6-Ro-Rs3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DVJ-KE-pWf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -336,7 +367,48 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ise-kq-pva" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="145"/>
+            <point key="canvasLocation" x="124" y="151"/>
+        </scene>
+        <!--Movie-->
+        <scene sceneID="9MU-Q6-bB6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iJ4-nc-V2N" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Movie" id="yV2-cO-gkc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KVj-XQ-81I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8B2-df-4ef" kind="relationship" relationship="rootViewController" id="jlV-Gs-CYb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bvj-z7-gMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="847"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mpc-HM-y1Z">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBar" automaticallyAdjustsScrollViewInsets="NO" id="Ymm-il-t0b" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="69W-Km-fwl">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="hgD-hj-xbl" kind="relationship" relationship="viewControllers" id="IMe-HI-VqQ"/>
+                        <segue destination="iJ4-nc-V2N" kind="relationship" relationship="viewControllers" id="ZLn-gt-dMm"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jc1-5F-PuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-815" y="499"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3sq-au-9hx"/>
+        <segue reference="8eT-79-8NC"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -12,10 +12,10 @@
 		6905580A1EA35AD900186D14 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690558091EA35AD900186D14 /* SettingCell.swift */; };
 		6905580E1EA36CBC00186D14 /* SizeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6905580D1EA36CBC00186D14 /* SizeTableViewController.swift */; };
 		690558101EA36CD900186D14 /* SizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6905580F1EA36CD900186D14 /* SizeCell.swift */; };
-		690558121EA60CB000186D14 /* GenreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690558111EA60CB000186D14 /* GenreTableViewController.swift */; };
-		690558141EA60CC100186D14 /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690558131EA60CC100186D14 /* GenreCell.swift */; };
 		690558161EA6161800186D14 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690558151EA6161800186D14 /* CountryCell.swift */; };
 		690558181EA6162600186D14 /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690558171EA6162600186D14 /* CountryTableViewController.swift */; };
+		6905581C1EA79D6000186D14 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6905581B1EA79D6000186D14 /* MovieViewController.swift */; };
+		6905581E1EA79D7B00186D14 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6905581D1EA79D7B00186D14 /* MovieCell.swift */; };
 		699F0CEA1E9E298700A3388F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699F0CE91E9E298700A3388F /* AppDelegate.swift */; };
 		699F0CEF1E9E298700A3388F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 699F0CED1E9E298700A3388F /* Main.storyboard */; };
 		699F0CF11E9E298700A3388F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699F0CF01E9E298700A3388F /* Assets.xcassets */; };
@@ -32,10 +32,10 @@
 		690558091EA35AD900186D14 /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		6905580D1EA36CBC00186D14 /* SizeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTableViewController.swift; sourceTree = "<group>"; };
 		6905580F1EA36CD900186D14 /* SizeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeCell.swift; sourceTree = "<group>"; };
-		690558111EA60CB000186D14 /* GenreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreTableViewController.swift; sourceTree = "<group>"; };
-		690558131EA60CC100186D14 /* GenreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
 		690558151EA6161800186D14 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		690558171EA6162600186D14 /* CountryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
+		6905581B1EA79D6000186D14 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		6905581D1EA79D7B00186D14 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		699F0CE61E9E298700A3388F /* iTunesArtworkiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesArtworkiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699F0CE91E9E298700A3388F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		699F0CEE1E9E298700A3388F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,21 +76,28 @@
 				690558091EA35AD900186D14 /* SettingCell.swift */,
 				6905580D1EA36CBC00186D14 /* SizeTableViewController.swift */,
 				6905580F1EA36CD900186D14 /* SizeCell.swift */,
-				690558111EA60CB000186D14 /* GenreTableViewController.swift */,
-				690558131EA60CC100186D14 /* GenreCell.swift */,
 				690558171EA6162600186D14 /* CountryTableViewController.swift */,
 				690558151EA6161800186D14 /* CountryCell.swift */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
 		};
-		690558191EA636D400186D14 /* FirstView */ = {
+		690558191EA636D400186D14 /* MusicView */ = {
 			isa = PBXGroup;
 			children = (
 				69AACB051E9E303700443DBF /* TableViewController.swift */,
 				69AACB031E9E2F0700443DBF /* ItemTableViewCell.swift */,
 			);
-			name = FirstView;
+			name = MusicView;
+			sourceTree = "<group>";
+		};
+		6905581A1EA79D1E00186D14 /* MovieView */ = {
+			isa = PBXGroup;
+			children = (
+				6905581B1EA79D6000186D14 /* MovieViewController.swift */,
+				6905581D1EA79D7B00186D14 /* MovieCell.swift */,
+			);
+			name = MovieView;
 			sourceTree = "<group>";
 		};
 		699F0CDD1E9E298600A3388F = {
@@ -115,7 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				699F0CED1E9E298700A3388F /* Main.storyboard */,
-				690558191EA636D400186D14 /* FirstView */,
+				690558191EA636D400186D14 /* MusicView */,
+				6905581A1EA79D1E00186D14 /* MovieView */,
 				690558081EA35A8400186D14 /* Setting */,
 				69AACB071E9E49AA00443DBF /* WebViewController.swift */,
 				699F0CE91E9E298700A3388F /* AppDelegate.swift */,
@@ -258,16 +266,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6905581E1EA79D7B00186D14 /* MovieCell.swift in Sources */,
+				6905581C1EA79D6000186D14 /* MovieViewController.swift in Sources */,
 				69AACB041E9E2F0700443DBF /* ItemTableViewCell.swift in Sources */,
 				699F0CEA1E9E298700A3388F /* AppDelegate.swift in Sources */,
 				6905580A1EA35AD900186D14 /* SettingCell.swift in Sources */,
-				690558141EA60CC100186D14 /* GenreCell.swift in Sources */,
 				690558161EA6161800186D14 /* CountryCell.swift in Sources */,
 				69AACB061E9E303700443DBF /* TableViewController.swift in Sources */,
 				690558101EA36CD900186D14 /* SizeCell.swift in Sources */,
 				6905580E1EA36CBC00186D14 /* SizeTableViewController.swift in Sources */,
 				690558181EA6162600186D14 /* CountryTableViewController.swift in Sources */,
-				690558121EA60CB000186D14 /* GenreTableViewController.swift in Sources */,
 				69AACB081E9E49AA00443DBF /* WebViewController.swift in Sources */,
 				690558071EA35A6300186D14 /* SettingTableViewController.swift in Sources */,
 			);

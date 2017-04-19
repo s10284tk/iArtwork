@@ -11,7 +11,7 @@ import UIKit
 class SettingTableViewController: UITableViewController {
   
   
-  let cellArray: [String] = ["国","アートワークのサイズ","ジャンル"]
+  let cellArray: [String] = ["国","アートワークのサイズ"]
   
 
     override func viewDidLoad() {
@@ -49,9 +49,6 @@ class SettingTableViewController: UITableViewController {
 //      let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //      let size = storyboard.instantiateViewController(withIdentifier: "SizeSetting") as! SettingSizeViewController
 //      navigationController?.pushViewController(size, animated: true)
-    } else if indexPath.row == 2{
-      print ("hello!")
-      performSegue(withIdentifier: "genre", sender: nil)
     } else {
       return
     }

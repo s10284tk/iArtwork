@@ -1,8 +1,8 @@
 //
-//  TableViewController.swift
+//  MovieViewController.swift
 //  iTunesArtworkiPhone
 //
-//  Created by piyo on 2017/04/12.
+//  Created by piyo on 2017/04/19.
 //  Copyright © 2017年 piyo. All rights reserved.
 //
 
@@ -11,24 +11,25 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 
-class TableViewController: UITableViewController, UISearchBarDelegate{
+class MovieViewController: UITableViewController, UISearchBarDelegate {
+
+  // タプル配列
+  var listArray: [(name: String, url: String)] = []
+  let section: [String] = ["iTunes", "IMDb"]
+  // ユーザーデフォルト
+  var userDefaults = UserDefaults.standard
   
-    // タプル配列
-    var listArray: [(name: String, url: String)] = []
-    // ユーザーデフォルト
-    var userDefaults = UserDefaults.standard
   
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tableView.reloadData()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-//サーチボタンが押された時動くやつ
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.tableView.reloadData()
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
+  
+  //サーチボタンが押された時動くやつ
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
     //初期化
@@ -45,13 +46,13 @@ class TableViewController: UITableViewController, UISearchBarDelegate{
     default:
       setCountry = country[0]
     }
-
+    
     if let search = searchBar.text {
       let listUrl = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch?"
       Alamofire.request(listUrl, parameters: [
         "term": search,
         "country": setCountry,
-        "entity": "musicTrack"
+        "entity": "movie"
         ])
         .responseJSON{ response in
           let json = JSON(response.result.value ?? 0)
@@ -68,27 +69,54 @@ class TableViewController: UITableViewController, UISearchBarDelegate{
   
   //rowの数を設定
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return listArray.count
+    switch section {
+    case 0:
+      return listArray.count
+    case 1:
+      return listArray.count
+    default:
+      return 0
+    }
   }
- 
+  
+  //sectionの数を設定
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return section.count
+  }
+  //sectionのタイトル
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return self.section[section]
+  }
+  
   //tableViewを設定
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as? ItemTableViewCell else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as? MovieCell else {
       return UITableViewCell()
     }
-    cell.trackTitle.text = listArray[indexPath.row].name
-    cell.itemUrl = listArray[indexPath.row].url
-    cell.accessoryType = .disclosureIndicator
-
-    let URL = NSURL(string: listArray[indexPath.row].url.replacingOccurrences(of: "60x60bb.jpg", with: "600x600bb.jpg"))!
-    cell.itemImageView.af_setImage(withURL: URL as URL)
-
+    
+    switch indexPath.section {
+    case 0:
+      cell.trackTitle.text = listArray[indexPath.row].name
+      cell.itemUrl = listArray[indexPath.row].url
+      cell.accessoryType = .disclosureIndicator
+      let URL = NSURL(string: listArray[indexPath.row].url.replacingOccurrences(of: "60x60bb.jpg", with: "600x600bb.jpg"))!
+      cell.itemImageView.af_setImage(withURL: URL as URL)
+    case 1:
+      cell.trackTitle.text = listArray[indexPath.row].name
+      cell.itemUrl = listArray[indexPath.row].url
+      cell.accessoryType = .disclosureIndicator
+      let URL = NSURL(string: listArray[indexPath.row].url.replacingOccurrences(of: "60x60bb.jpg", with: "600x600bb.jpg"))!
+      cell.itemImageView.af_setImage(withURL: URL as URL)
+    default:
+      break
+    }
+    
     return cell
   }
   
   //webViewへページ遷移する際の値受け渡し
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let cell = sender as? ItemTableViewCell {
+    if let cell = sender as? MovieCell {
       if let webViewController = segue.destination as? WebViewController {
         
         //サイズによってURLを置換
@@ -106,6 +134,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate{
       }
     }
   }
+  
 
 
 }
