@@ -16,9 +16,9 @@
 		690558181EA6162600186D14 /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690558171EA6162600186D14 /* CountryTableViewController.swift */; };
 		6905581C1EA79D6000186D14 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6905581B1EA79D6000186D14 /* MovieViewController.swift */; };
 		6905581E1EA79D7B00186D14 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6905581D1EA79D7B00186D14 /* MovieCell.swift */; };
+		690558291EA856D600186D14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 690558281EA856D600186D14 /* Images.xcassets */; };
 		699F0CEA1E9E298700A3388F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699F0CE91E9E298700A3388F /* AppDelegate.swift */; };
 		699F0CEF1E9E298700A3388F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 699F0CED1E9E298700A3388F /* Main.storyboard */; };
-		699F0CF11E9E298700A3388F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699F0CF01E9E298700A3388F /* Assets.xcassets */; };
 		699F0CF41E9E298700A3388F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 699F0CF21E9E298700A3388F /* LaunchScreen.storyboard */; };
 		69AACB041E9E2F0700443DBF /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AACB031E9E2F0700443DBF /* ItemTableViewCell.swift */; };
 		69AACB061E9E303700443DBF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AACB051E9E303700443DBF /* TableViewController.swift */; };
@@ -36,10 +36,10 @@
 		690558171EA6162600186D14 /* CountryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
 		6905581B1EA79D6000186D14 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		6905581D1EA79D7B00186D14 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		690558281EA856D600186D14 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		699F0CE61E9E298700A3388F /* iTunesArtworkiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesArtworkiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699F0CE91E9E298700A3388F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		699F0CEE1E9E298700A3388F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		699F0CF01E9E298700A3388F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		699F0CF31E9E298700A3388F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		699F0CF51E9E298700A3388F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69AACB031E9E2F0700443DBF /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -127,9 +127,9 @@
 				690558081EA35A8400186D14 /* Setting */,
 				69AACB071E9E49AA00443DBF /* WebViewController.swift */,
 				699F0CE91E9E298700A3388F /* AppDelegate.swift */,
-				699F0CF01E9E298700A3388F /* Assets.xcassets */,
 				699F0CF21E9E298700A3388F /* LaunchScreen.storyboard */,
 				699F0CF51E9E298700A3388F /* Info.plist */,
+				690558281EA856D600186D14 /* Images.xcassets */,
 			);
 			path = iTunesArtworkiPhone;
 			sourceTree = "<group>";
@@ -205,8 +205,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690558291EA856D600186D14 /* Images.xcassets in Resources */,
 				699F0CF41E9E298700A3388F /* LaunchScreen.storyboard in Resources */,
-				699F0CF11E9E298700A3388F /* Assets.xcassets in Resources */,
 				699F0CEF1E9E298700A3388F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +403,7 @@
 			baseConfigurationReference = 27338B776F1697C33DFA094D /* Pods-iTunesArtworkiPhone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = ZF2L8YKC2B;
 				INFOPLIST_FILE = iTunesArtworkiPhone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -417,6 +418,7 @@
 			baseConfigurationReference = DA24D69DC7FF569464CD3F12 /* Pods-iTunesArtworkiPhone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = ZF2L8YKC2B;
 				INFOPLIST_FILE = iTunesArtworkiPhone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

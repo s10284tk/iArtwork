@@ -28,6 +28,9 @@ class TableViewController: UITableViewController, UISearchBarDelegate{
         super.didReceiveMemoryWarning()
     }
 
+
+
+  
 //サーチボタンが押された時動くやつ
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     searchBar.resignFirstResponder()

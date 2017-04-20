@@ -22,9 +22,6 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="bbT-Zm-vtw" id="tbE-kw-bOx"/>
-                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" id="U9W-dz-KpT" customClass="ItemTableViewCell" customModule="iTunesArtworkiPhone" customModuleProvider="target">
@@ -69,23 +66,11 @@
                             <outlet property="delegate" destination="bbT-Zm-vtw" id="nnb-1J-1su"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Music" id="ZzM-Hs-nY6">
-                        <barButtonItem key="rightBarButtonItem" style="done" id="gVe-bT-Jq6">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y4o-XP-xOz">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="設定"/>
-                                <connections>
-                                    <action selector="ButtonSet:" destination="bbT-Zm-vtw" eventType="touchUpInside" id="9kQ-Ge-BPp"/>
-                                    <segue destination="KiQ-RD-pnO" kind="show" id="Axo-gC-59x"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Music" id="ZzM-Hs-nY6"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PS3-Eu-BZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="151"/>
+            <point key="canvasLocation" x="1031" y="151"/>
         </scene>
         <!--Movie-->
         <scene sceneID="cPv-Qe-Gat">
@@ -146,22 +131,11 @@
                             <outlet property="delegate" destination="8B2-df-4ef" id="RdN-Ss-giQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Movie" id="C7L-6T-6nV">
-                        <barButtonItem key="rightBarButtonItem" style="done" id="qGz-Mt-sI7">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kZ0-6G-m9H">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="設定"/>
-                                <connections>
-                                    <segue destination="KiQ-RD-pnO" kind="show" id="8eT-79-8NC"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Movie" id="C7L-6T-6nV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBM-Qe-ARF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1069.5999999999999" y="846.9265367316342"/>
+            <point key="canvasLocation" x="1030" y="847"/>
         </scene>
         <!--画像詳細-->
         <scene sceneID="sF6-9D-bBw">
@@ -176,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleAspectFit" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SMd-40-FoJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Taf-R8-DNg">
@@ -209,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwp-68-goc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2838" y="795"/>
+            <point key="canvasLocation" x="1988" y="499"/>
         </scene>
         <!--設定-->
         <scene sceneID="DgN-qE-ZUL">
@@ -251,6 +225,7 @@
                             <outlet property="delegate" destination="KiQ-RD-pnO" id="ECL-bt-0uX"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Setting" id="0fB-6l-LG5"/>
                     <connections>
                         <segue destination="hqz-jK-cxE" kind="show" identifier="size" id="c4F-RT-3Fv"/>
                         <segue destination="Mvs-3V-ShL" kind="show" identifier="country" id="zLZ-hU-nTj"/>
@@ -258,7 +233,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYQ-z2-6cZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2223" y="-54"/>
+            <point key="canvasLocation" x="1031.2" y="-570.76461769115451"/>
         </scene>
         <!--国を設定-->
         <scene sceneID="VTQ-oa-a7I">
@@ -303,7 +278,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Dx-Y2-Fs1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3057" y="-733"/>
+            <point key="canvasLocation" x="1972" y="-1243"/>
         </scene>
         <!--画像のサイズを設定-->
         <scene sceneID="mrw-DX-iWX">
@@ -348,13 +323,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W08-Sq-9hV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3057" y="17"/>
+            <point key="canvasLocation" x="1972" y="-571"/>
         </scene>
         <!--Music-->
         <scene sceneID="F2Z-fP-cat">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hgD-hj-xbl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Music" id="tq6-Ro-Rs3"/>
+                    <tabBarItem key="tabBarItem" title="Music" image="musicIcon@x2" id="tq6-Ro-Rs3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DVJ-KE-pWf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -373,7 +348,7 @@
         <scene sceneID="9MU-Q6-bB6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iJ4-nc-V2N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movie" id="yV2-cO-gkc"/>
+                    <tabBarItem key="tabBarItem" title="Movie" image="movieIcon@x2" id="yV2-cO-gkc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KVj-XQ-81I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -394,21 +369,46 @@
                 <tabBarController storyboardIdentifier="tabBar" automaticallyAdjustsScrollViewInsets="NO" id="Ymm-il-t0b" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="69W-Km-fwl">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="hgD-hj-xbl" kind="relationship" relationship="viewControllers" id="IMe-HI-VqQ"/>
                         <segue destination="iJ4-nc-V2N" kind="relationship" relationship="viewControllers" id="ZLn-gt-dMm"/>
+                        <segue destination="iR2-WC-fOa" kind="relationship" relationship="viewControllers" id="uEa-zi-ZHK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jc1-5F-PuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-815" y="499"/>
         </scene>
+        <!--Setting-->
+        <scene sceneID="q08-OR-oLV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iR2-WC-fOa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Setting" image="settingIcon@x2" id="m8a-eT-Ddi"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u0W-75-vV6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KiQ-RD-pnO" kind="relationship" relationship="rootViewController" id="Jqg-qh-zl2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAn-3H-7qp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124" y="-571"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="movieIcon@x2" width="30" height="30"/>
+        <image name="musicIcon@x2" width="30" height="30"/>
+        <image name="settingIcon@x2" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3sq-au-9hx"/>
-        <segue reference="8eT-79-8NC"/>
+        <segue reference="ZtF-Bm-BSk"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,7 @@ class MovieViewController: UITableViewController, UISearchBarDelegate {
 
   // タプル配列
   var listArray: [(name: String, url: String)] = []
+  var listArray2: [(name: String, url: String)] = []
   let section: [String] = ["iTunes", "IMDb"]
   // ユーザーデフォルト
   var userDefaults = UserDefaults.standard
@@ -34,7 +35,7 @@ class MovieViewController: UITableViewController, UISearchBarDelegate {
     searchBar.resignFirstResponder()
     //初期化
     listArray.removeAll()
-    
+    listArray2.removeAll()
     //国選択
     let country: [String] = ["jp", "us"]
     var setCountry: String
@@ -49,6 +50,8 @@ class MovieViewController: UITableViewController, UISearchBarDelegate {
     
     if let search = searchBar.text {
       let listUrl = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch?"
+      let listUrlIMDB = "http://www.omdbapi.com/?"
+      
       Alamofire.request(listUrl, parameters: [
         "term": search,
         "country": setCountry,
@@ -64,6 +67,20 @@ class MovieViewController: UITableViewController, UISearchBarDelegate {
           }
           self.tableView.reloadData()
       }
+
+      Alamofire.request(listUrlIMDB, parameters: [
+        "s": search
+        ])
+        .responseJSON{response in
+          let json = JSON(response.result.value ?? 0)
+          json["Search"].forEach{(i, data) in
+            let name2 : String = data["Title"].stringValue
+            let url2 : String = data["Poster"].stringValue
+            let list2 = (name2, url2)
+            self.listArray2.append(list2)
+          }
+          self.tableView.reloadData()
+      }
     }
   }
   
@@ -73,7 +90,7 @@ class MovieViewController: UITableViewController, UISearchBarDelegate {
     case 0:
       return listArray.count
     case 1:
-      return listArray.count
+      return listArray2.count
     default:
       return 0
     }
@@ -102,10 +119,10 @@ class MovieViewController: UITableViewController, UISearchBarDelegate {
       let URL = NSURL(string: listArray[indexPath.row].url.replacingOccurrences(of: "60x60bb.jpg", with: "600x600bb.jpg"))!
       cell.itemImageView.af_setImage(withURL: URL as URL)
     case 1:
-      cell.trackTitle.text = listArray[indexPath.row].name
-      cell.itemUrl = listArray[indexPath.row].url
+      cell.trackTitle.text = listArray2[indexPath.row].name
+      cell.itemUrl = listArray2[indexPath.row].url
       cell.accessoryType = .disclosureIndicator
-      let URL = NSURL(string: listArray[indexPath.row].url.replacingOccurrences(of: "60x60bb.jpg", with: "600x600bb.jpg"))!
+      let URL = NSURL(string: listArray2[indexPath.row].url)!
       cell.itemImageView.af_setImage(withURL: URL as URL)
     default:
       break
@@ -121,13 +138,25 @@ class MovieViewController: UITableViewController, UISearchBarDelegate {
         
         //サイズによってURLを置換
         let size: [String] = ["600x600bb.jpg", "100000x100000-999.jpg"]
+        let sizeIMDB: [String] = ["1000.jpg", "1500.jpg"]
+        guard let urlurl = cell.itemUrl else{
+          return
+        }
         switch userDefaults.integer(forKey: "size") {
         case 0:
-          webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: size[0])
+          if urlurl.contains("60x60bb.jpg"){
+            webViewController.itemUrl = urlurl.replacingOccurrences(of: "60x60bb.jpg", with: size[0])
+          } else {
+          webViewController.itemUrl = urlurl.replacingOccurrences(of: "300.jpg", with: sizeIMDB[0])
+          }
         case 1:
-          webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: size[1])
+          if urlurl.contains("60x60bb.jpg"){
+            webViewController.itemUrl = urlurl.replacingOccurrences(of: "60x60bb.jpg", with: size[1])
+          } else {
+            webViewController.itemUrl = urlurl.replacingOccurrences(of: "300.jpg", with: sizeIMDB[1])
+          }
         default:
-          webViewController.itemUrl = cell.itemUrl
+          webViewController.itemUrl = urlurl
         }
         print(cell.itemUrl ?? "error")
         webViewController.navigationItem.title = cell.trackTitle.text
