@@ -11,12 +11,12 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 
-class TableViewController: UITableViewController, UISearchBarDelegate{
+internal final class TableViewController: UITableViewController, UISearchBarDelegate{
     
     // タプル配列
-    var listArray: [(name: String, url: String)] = []
+    private var listArray: [(name: String, url: String)] = []
     // ユーザーデフォルト
-    var userDefaults = UserDefaults.standard
+    private var userDefaults = UserDefaults.standard
     
     
     override func viewDidLoad() {

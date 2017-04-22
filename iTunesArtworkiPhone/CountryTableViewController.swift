@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CountryTableViewController: UITableViewController {
+internal final class CountryTableViewController: UITableViewController {
     
-    let cellArray: [String] = ["JAPAN", "USA"]
-    var selectCountry: Int = 0
-    var userDefaults = UserDefaults.standard
+    private let cellArray: [String] = ["JAPAN", "USA"]
+    private var selectCountry: Int = 0
+    private var userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()

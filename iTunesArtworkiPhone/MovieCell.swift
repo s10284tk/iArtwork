@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MovieCell: UITableViewCell {
+internal final class MovieCell: UITableViewCell {
     
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var trackTitle: UILabel!

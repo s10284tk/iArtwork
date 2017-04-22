@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SettingTableViewController: UITableViewController {
+internal final class SettingTableViewController: UITableViewController {
     
     
-    let cellArray: [String] = ["国","アートワークのサイズ"]
+    private let cellArray: [String] = ["国","アートワークのサイズ"]
     
     
     override func viewDidLoad() {

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SettingCell: UITableViewCell{
+internal final class SettingCell: UITableViewCell{
     
     @IBOutlet weak var setLabel: UILabel!
     

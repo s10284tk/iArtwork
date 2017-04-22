@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SizeCell: UITableViewCell {
+internal final class SizeCell: UITableViewCell {
     
     @IBOutlet weak var sizeLabel: UILabel!
     

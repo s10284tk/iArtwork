@@ -10,18 +10,18 @@ import UIKit
 import AlamofireImage
 import Alamofire
 
-class WebViewController: UIViewController {
+internal final class WebViewController: UIViewController {
     
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet private weak var webView: UIWebView!
     
     var itemUrl: String?
-    var itemImage: UIImage?
-    let board = UIPasteboard.general
+    private var itemImage: UIImage?
+    private let board = UIPasteboard.general
     
     
     
     // ボタン押したとき
-    @IBAction func buttonPush(_ sender: Any) {
+    @IBAction private func buttonPush(_ sender: Any) {
         
         // アラートを作成
         //    let alert = UIAlertController(

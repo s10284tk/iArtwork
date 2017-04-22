@@ -9,7 +9,7 @@
 import UIKit
 import AlamofireImage
 
-class ItemTableViewCell: UITableViewCell {
+internal final class ItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var trackTitle: UILabel!

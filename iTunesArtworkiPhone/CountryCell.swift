@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CountryCell: UITableViewCell{
+internal final class CountryCell: UITableViewCell{
     
     @IBOutlet weak var countryLabel: UILabel!
     

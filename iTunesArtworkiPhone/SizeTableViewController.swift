@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SizeTableViewController: UITableViewController {
+internal final class SizeTableViewController: UITableViewController {
     
-    let cellArray: [String] = ["Medium", "Large"]
-    var selectSize: Int = 0
-    var userDefaults = UserDefaults.standard
+    private let cellArray: [String] = ["Medium", "Large"]
+    private var selectSize: Int = 0
+    private var userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()

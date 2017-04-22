@@ -11,14 +11,14 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 
-class MovieViewController: UITableViewController, UISearchBarDelegate {
+internal final class MovieViewController: UITableViewController, UISearchBarDelegate {
     
     // タプル配列
-    var listArray: [(name: String, url: String)] = []
-    var listArray2: [(name: String, url: String)] = []
-    let section: [String] = ["iTunes", "IMDb"]
+    private var listArray: [(name: String, url: String)] = []
+    private var listArray2: [(name: String, url: String)] = []
+    private let section: [String] = ["iTunes", "IMDb"]
     // ユーザーデフォルト
-    var userDefaults = UserDefaults.standard
+    private var userDefaults = UserDefaults.standard
     
     
     override func viewDidLoad() {
