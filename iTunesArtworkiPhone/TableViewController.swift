@@ -28,8 +28,10 @@ class TableViewController: UITableViewController, UISearchBarDelegate{
         super.didReceiveMemoryWarning()
     }
 
-
-
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    print("touch")
+  }
   
 //サーチボタンが押された時動くやつ
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
