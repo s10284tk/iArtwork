@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-class CountryCell: UITableViewCell{
-  
-  @IBOutlet weak var countryLabel: UILabel!
-  
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-  }
+internal final class CountryCell: UITableViewCell{
+    
+    @IBOutlet weak var countryLabel: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
 }

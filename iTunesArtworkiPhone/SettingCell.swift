@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-class SettingCell: UITableViewCell{
-  
-  @IBOutlet weak var setLabel: UILabel!
-  
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-  }
-  
+internal final class SettingCell: UITableViewCell{
+    
+    @IBOutlet weak var setLabel: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
 }
