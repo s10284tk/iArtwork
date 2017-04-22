@@ -59,7 +59,6 @@ class MovieViewController: UITableViewController, UISearchBarDelegate {
         ])
         .responseJSON{ response in
           let json = JSON(response.result.value ?? 0)
-          print(json)
           json["results"].forEach{(i, data) in
             let name: String = data["trackCensoredName"].stringValue
             let url: String = data["artworkUrl60"].stringValue
