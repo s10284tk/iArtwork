@@ -1,4 +1,4 @@
 # iArtwork
-音楽アルバムと映画のポスターを検索するiPhoneアプリです。
-現状出力はClipBoardのみ
-動作確認はiPhone6sのみ
+音楽アルバムと映画のポスターを検索するiPhoneアプリです。<br>
+現状出力はClipBoardのみ。<br>
+動作確認はiPhone6sのみ。
