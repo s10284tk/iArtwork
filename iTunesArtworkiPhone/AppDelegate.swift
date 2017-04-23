@@ -13,8 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    var userDefaults = UserDefaults.standard
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -35,9 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        userDefaults.register(defaults: ["size": 0])
-        userDefaults.register(defaults: ["genre": 0])
-        userDefaults.register(defaults: ["country": 0])
+        
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

@@ -15,9 +15,6 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
     
     // タプル配列
     private var listArray: [(name: String, url: String)] = []
-    // ユーザーデフォルト
-    private var userDefaults = UserDefaults.standard
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +24,6 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touch")
@@ -41,22 +36,13 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
         listArray.removeAll()
         
         //国選択
-        let country: [String] = ["jp", "us"]
-        var setCountry: String
-        switch userDefaults.integer(forKey: "country") {
-        case 0:
-            setCountry = country[0]
-        case 1:
-            setCountry = country[1]
-        default:
-            setCountry = country[0]
-        }
+        let country = Country.currentCountry.requestParameter
         
         if let search = searchBar.text {
             let listUrl = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch?"
             Alamofire.request(listUrl, parameters: [
                 "term": search,
-                "country": setCountry,
+                "country": country,
                 "entity": "musicTrack"
                 ])
                 .responseJSON{ response in
@@ -99,7 +85,7 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
                 
                 //サイズによってURLを置換
                 let size: [String] = ["600x600bb.jpg", "100000x100000-999.jpg"]
-                switch userDefaults.integer(forKey: "size") {
+                switch DeviceData.imageSizeRawValue {
                 case 0:
                     webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: size[0])
                 case 1:
