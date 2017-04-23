@@ -19,6 +19,8 @@
 		69AACB081E9E49AA00443DBF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AACB071E9E49AA00443DBF /* WebViewController.swift */; };
 		A558D0B61EAC53C7009BE780 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0B51EAC53C7009BE780 /* SettingViewController.swift */; };
 		A558D0B81EAC5BEF009BE780 /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0B71EAC5BEF009BE780 /* DeviceData.swift */; };
+		A558D0BB1EACAD39009BE780 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0BA1EACAD39009BE780 /* Country.swift */; };
+		A558D0BE1EACB335009BE780 /* ArtworkSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0BD1EACB335009BE780 /* ArtworkSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		69AACB071E9E49AA00443DBF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A558D0B51EAC53C7009BE780 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A558D0B71EAC5BEF009BE780 /* DeviceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
+		A558D0BA1EACAD39009BE780 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		A558D0BD1EACB335009BE780 /* ArtworkSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkSize.swift; sourceTree = "<group>"; };
 		DA24D69DC7FF569464CD3F12 /* Pods-iTunesArtworkiPhone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesArtworkiPhone.release.xcconfig"; path = "Pods/Target Support Files/Pods-iTunesArtworkiPhone/Pods-iTunesArtworkiPhone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,9 +116,10 @@
 				690558191EA636D400186D14 /* MusicView */,
 				6905581A1EA79D1E00186D14 /* MovieView */,
 				690558081EA35A8400186D14 /* Setting */,
+				A558D0B91EACAD03009BE780 /* Model */,
+				A558D0BC1EACB0A0009BE780 /* enumeration */,
 				69AACB071E9E49AA00443DBF /* WebViewController.swift */,
 				699F0CE91E9E298700A3388F /* AppDelegate.swift */,
-				A558D0B71EAC5BEF009BE780 /* DeviceData.swift */,
 				699F0CF21E9E298700A3388F /* LaunchScreen.storyboard */,
 				699F0CF51E9E298700A3388F /* Info.plist */,
 				690558281EA856D600186D14 /* Images.xcassets */,
@@ -128,6 +133,23 @@
 				26113DBFF0982DFEACFFCFE0 /* Pods_iTunesArtworkiPhone.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A558D0B91EACAD03009BE780 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A558D0B71EAC5BEF009BE780 /* DeviceData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A558D0BC1EACB0A0009BE780 /* enumeration */ = {
+			isa = PBXGroup;
+			children = (
+				A558D0BA1EACAD39009BE780 /* Country.swift */,
+				A558D0BD1EACB335009BE780 /* ArtworkSize.swift */,
+			);
+			name = enumeration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6905581E1EA79D7B00186D14 /* MovieCell.swift in Sources */,
+				A558D0BB1EACAD39009BE780 /* Country.swift in Sources */,
 				6905581C1EA79D6000186D14 /* MovieViewController.swift in Sources */,
+				A558D0BE1EACB335009BE780 /* ArtworkSize.swift in Sources */,
 				69AACB041E9E2F0700443DBF /* ItemTableViewCell.swift in Sources */,
 				A558D0B61EAC53C7009BE780 /* SettingViewController.swift in Sources */,
 				699F0CEA1E9E298700A3388F /* AppDelegate.swift in Sources */,

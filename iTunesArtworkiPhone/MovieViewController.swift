@@ -34,17 +34,7 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
         listArray.removeAll()
         listArray2.removeAll()
         //国選択
-        let country: [String] = ["jp", "us"]
-        var setCountry: String
-        switch DeviceData.countryRawValue {
-        case 0:
-            setCountry = country[0]
-        case 1:
-            setCountry = country[1]
-        default:
-            assertionFailure("ここには来ないはず")
-            setCountry = country[0]
-        }
+        let country = Country.currentCountry.requestParameter
         
         if let search = searchBar.text {
             let listUrl = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch?"
@@ -52,12 +42,12 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
             
             Alamofire.request(listUrl, parameters: [
                 "term": search,
-                "country": setCountry,
+                "country": country,
                 "entity": "movie"
                 ])
                 .responseJSON{ response in
                     let json = JSON(response.result.value ?? 0)
-                    json["results"].forEach{(i, data) in
+                    json["results"].forEach{ _, data in
                         let name: String = data["trackCensoredName"].stringValue
                         let url: String = data["artworkUrl60"].stringValue
                         let list = (name, url)

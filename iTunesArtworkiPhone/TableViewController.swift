@@ -25,8 +25,6 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
         super.didReceiveMemoryWarning()
     }
     
-    
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touch")
     }
@@ -38,22 +36,13 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
         listArray.removeAll()
         
         //国選択
-        let country: [String] = ["jp", "us"]
-        var setCountry: String
-        switch DeviceData.countryRawValue {
-        case 0:
-            setCountry = country[0]
-        case 1:
-            setCountry = country[1]
-        default:
-            setCountry = country[0]
-        }
+        let country = Country.currentCountry.requestParameter
         
         if let search = searchBar.text {
             let listUrl = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch?"
             Alamofire.request(listUrl, parameters: [
                 "term": search,
-                "country": setCountry,
+                "country": country,
                 "entity": "musicTrack"
                 ])
                 .responseJSON{ response in

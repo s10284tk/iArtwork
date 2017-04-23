@@ -10,8 +10,8 @@ import UIKit
 
 internal final class SettingViewController: UIViewController {
 
-    let countries = ["JAPAN", "USA"]
-    let imageSize = ["Medium", "Large"]
+    let countries: [Country] = [.japan, .usa]
+    let imageSize: [ArtworkSize] = [.medium, .large]
     
     // TODO: 本当はLocalizable.stringsを作って文字列はすべてそこに定義し、あとから変更しやすいようにすべき
     //       また、タイトルのラベルもstoryboard上ではなくoutletを引っ張ってきて↑の定義を設定する作りにすべき
@@ -33,12 +33,12 @@ internal final class SettingViewController: UIViewController {
     }
     
     private func setupViews() {
-        let countryRawValue = DeviceData.countryRawValue
-        let artworkRawValue = DeviceData.imageSizeRawValue
-        countryLabel.text = countries[countryRawValue]
-        artworkLabel.text = imageSize[artworkRawValue]
-        dataSetPickerView.selectRow(countryRawValue, inComponent: 0, animated: false)
-        dataSetPickerView.selectRow(artworkRawValue, inComponent: 1, animated: false)
+        let currentCountry = Country.currentCountry
+        let currentArtworkSize = ArtworkSize.currentSize
+        countryLabel.text = currentCountry.title
+        artworkLabel.text = currentArtworkSize.title
+        dataSetPickerView.selectRow(currentCountry.rawValue, inComponent: 0, animated: false)
+        dataSetPickerView.selectRow(currentArtworkSize.rawValue, inComponent: 1, animated: false)
     }
 }
 
@@ -77,11 +77,11 @@ extension SettingViewController: UIPickerViewDelegate {
         switch component {
         case 0:
             // 国
-            return countries[row]
+            return countries[row].title
             
         case 1:
             // アートワークのサイズ
-            return imageSize[row]
+            return imageSize[row].title
             
         default:
             assertionFailure("ここには来ないはず")
@@ -95,12 +95,12 @@ extension SettingViewController: UIPickerViewDelegate {
         case 0:
             // 国
             DeviceData.countryRawValue = row
-            countryLabel.text = countries[row]
+            countryLabel.text = countries[row].title
             
         case 1:
             // アートワークのサイズ
             DeviceData.imageSizeRawValue = row
-            artworkLabel.text = imageSize[row]
+            artworkLabel.text = imageSize[row].title
             
         default:
             assertionFailure("ここには来ないはず")
