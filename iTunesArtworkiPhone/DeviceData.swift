@@ -10,26 +10,28 @@ import Foundation
 
 internal struct DeviceData {
     
-    struct UserDefaultsKey {
+    private struct UserDefaultsKey {
         static let imageSize = "size"
         static let country = "country"
     }
     
+    private static let userDefaults = UserDefaults.standard
+    
     static var imageSizeRawValue: Int {
         get {
-            return UserDefaults.standard.integer(forKey: UserDefaultsKey.imageSize)
+            return userDefaults.integer(forKey: UserDefaultsKey.imageSize)
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: UserDefaultsKey.imageSize)
+            userDefaults.set(newValue, forKey: UserDefaultsKey.imageSize)
         }
     }
     
     static var countryRawValue: Int {
         get {
-            return UserDefaults.standard.integer(forKey: UserDefaultsKey.country)
+            return userDefaults.integer(forKey: UserDefaultsKey.country)
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: UserDefaultsKey.country)
+            userDefaults.set(newValue, forKey: UserDefaultsKey.country)
         }
     }
 }

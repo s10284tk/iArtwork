@@ -17,9 +17,6 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
     private var listArray: [(name: String, url: String)] = []
     private var listArray2: [(name: String, url: String)] = []
     private let section: [String] = ["iTunes", "IMDb"]
-    // ユーザーデフォルト
-    private var userDefaults = UserDefaults.standard
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +36,13 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
         //国選択
         let country: [String] = ["jp", "us"]
         var setCountry: String
-        switch userDefaults.integer(forKey: "country") {
+        switch DeviceData.countryRawValue {
         case 0:
             setCountry = country[0]
         case 1:
             setCountry = country[1]
         default:
+            assertionFailure("ここには来ないはず")
             setCountry = country[0]
         }
         
@@ -142,7 +140,7 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
                 guard let urlurl = cell.itemUrl else{
                     return
                 }
-                switch userDefaults.integer(forKey: "size") {
+                switch DeviceData.imageSizeRawValue {
                 case 0:
                     if urlurl.contains("60x60bb.jpg"){
                         webViewController.itemUrl = urlurl.replacingOccurrences(of: "60x60bb.jpg", with: size[0])
@@ -156,6 +154,7 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
                         webViewController.itemUrl = urlurl.replacingOccurrences(of: "300.jpg", with: sizeIMDB[1])
                     }
                 default:
+                    assertionFailure("ここには来ないはず")
                     webViewController.itemUrl = urlurl
                 }
                 print(cell.itemUrl ?? "error")

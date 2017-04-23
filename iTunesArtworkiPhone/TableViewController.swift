@@ -15,9 +15,6 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
     
     // タプル配列
     private var listArray: [(name: String, url: String)] = []
-    // ユーザーデフォルト
-    private var userDefaults = UserDefaults.standard
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +40,7 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
         //国選択
         let country: [String] = ["jp", "us"]
         var setCountry: String
-        switch userDefaults.integer(forKey: "country") {
+        switch DeviceData.countryRawValue {
         case 0:
             setCountry = country[0]
         case 1:
@@ -99,7 +96,7 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
                 
                 //サイズによってURLを置換
                 let size: [String] = ["600x600bb.jpg", "100000x100000-999.jpg"]
-                switch userDefaults.integer(forKey: "size") {
+                switch DeviceData.imageSizeRawValue {
                 case 0:
                     webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: size[0])
                 case 1:
