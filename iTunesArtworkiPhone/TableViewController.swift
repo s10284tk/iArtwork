@@ -18,7 +18,6 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,6 +33,7 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
         searchBar.resignFirstResponder()
         //初期化
         listArray.removeAll()
+        self.tableView.reloadData()
         
         //国選択
         let country = Country.currentCountry.requestParameter
@@ -52,8 +52,8 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
                         let url: String = data["artworkUrl60"].stringValue
                         let list = (name, url)
                         self.listArray.append(list)
+                        self.tableView.insertRows(at: [IndexPath(row: self.listArray.count - 1, section: 0)], with: .right)
                     }
-                    self.tableView.reloadData()
             }
         }
     }
