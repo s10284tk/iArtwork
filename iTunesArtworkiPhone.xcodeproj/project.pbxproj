@@ -46,7 +46,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		27338B776F1697C33DFA094D /* Pods-iTunesArtworkiPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesArtworkiPhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iTunesArtworkiPhone/Pods-iTunesArtworkiPhone.debug.xcconfig"; sourceTree = "<group>"; };
 		6905581B1EA79D6000186D14 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		6905581D1EA79D7B00186D14 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		690558281EA856D600186D14 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -67,7 +66,6 @@
 		A558D0B71EAC5BEF009BE780 /* DeviceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
 		A558D0BA1EACAD39009BE780 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		A558D0BD1EACB335009BE780 /* ArtworkSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkSize.swift; sourceTree = "<group>"; };
-		DA24D69DC7FF569464CD3F12 /* Pods-iTunesArtworkiPhone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesArtworkiPhone.release.xcconfig"; path = "Pods/Target Support Files/Pods-iTunesArtworkiPhone/Pods-iTunesArtworkiPhone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,15 +82,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3B3CD022DD2C7878AED24083 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				27338B776F1697C33DFA094D /* Pods-iTunesArtworkiPhone.debug.xcconfig */,
-				DA24D69DC7FF569464CD3F12 /* Pods-iTunesArtworkiPhone.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		690558081EA35A8400186D14 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +113,6 @@
 			children = (
 				699F0CE81E9E298700A3388F /* iTunesArtworkiPhone */,
 				699F0CE71E9E298700A3388F /* Products */,
-				3B3CD022DD2C7878AED24083 /* Pods */,
 				9591E0E90B23012F9411BE0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
