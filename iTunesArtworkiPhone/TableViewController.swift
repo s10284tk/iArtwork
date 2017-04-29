@@ -84,12 +84,11 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
             if let webViewController = segue.destination as? WebViewController {
                 
                 //サイズによってURLを置換
-                let size: [String] = ["600x600bb.jpg", "100000x100000-999.jpg"]
                 switch DeviceData.imageSizeRawValue {
                 case 0:
-                    webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: size[0])
+                    webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: ArtworkSize.medium.itunesSize)
                 case 1:
-                    webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: size[1])
+                    webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: ArtworkSize.large.itunesSize)
                 default:
                     webViewController.itemUrl = cell.itemUrl
                 }
