@@ -43,10 +43,10 @@ internal enum Country {
     var title: String {
         switch self {
         case .japan:
-            return "JAPAN"
+            return NSLocalizedString("japan", comment: "")
             
         case .usa:
-            return "USA"
+            return NSLocalizedString("usa", comment: "")
         }
     }
     

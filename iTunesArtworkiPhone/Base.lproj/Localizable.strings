@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  iTunesArtworkiPhone
+
+  Created by piyo on 2017/04/26.
+  Copyright © 2017年 piyo. All rights reserved.
+*/
+
+"japan" = "JAPAN";
+"usa" = "USA";
+"medium" = "Medium";
+"large" = "Large";

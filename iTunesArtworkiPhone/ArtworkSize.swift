@@ -43,10 +43,26 @@ internal enum ArtworkSize {
     var title: String {
         switch self {
         case .medium:
-            return "Medium"
+            return NSLocalizedString("medium", comment: "")
             
         case .large:
-            return "Large"
+            return NSLocalizedString("large", comment: "")
+        }
+    }
+    var itunesSize: String {
+        switch self {
+        case .medium:
+            return "1500x1500bb.jpg"
+        case .large:
+            return "100000x100000-999.jpg"
+        }
+    }
+    var imdbSize: String {
+        switch self {
+        case .medium:
+            return "1000.jpg"
+        case .large:
+            return "1500.jpg"
         }
     }
 }

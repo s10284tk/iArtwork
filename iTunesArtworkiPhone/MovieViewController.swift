@@ -125,23 +125,21 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
             if let webViewController = segue.destination as? WebViewController {
                 
                 //サイズによってURLを置換
-                let size: [String] = ["600x600bb.jpg", "100000x100000-999.jpg"]
-                let sizeIMDB: [String] = ["1000.jpg", "1500.jpg"]
                 guard let urlurl = cell.itemUrl else{
                     return
                 }
                 switch DeviceData.imageSizeRawValue {
                 case 0:
                     if urlurl.contains("60x60bb.jpg"){
-                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "60x60bb.jpg", with: size[0])
+                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "60x60bb.jpg", with: ArtworkSize.medium.itunesSize)
                     } else {
-                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "300.jpg", with: sizeIMDB[0])
+                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "300.jpg", with: ArtworkSize.medium.imdbSize)
                     }
                 case 1:
                     if urlurl.contains("60x60bb.jpg"){
-                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "60x60bb.jpg", with: size[1])
+                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "60x60bb.jpg", with: ArtworkSize.large.itunesSize)
                     } else {
-                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "300.jpg", with: sizeIMDB[1])
+                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "300.jpg", with: ArtworkSize.large.imdbSize)
                     }
                 default:
                     assertionFailure("ここには来ないはず")
