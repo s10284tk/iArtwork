@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42241352B3293C1A0F35BC3F /* Pods_iTunesArtworkiPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26113DBFF0982DFEACFFCFE0 /* Pods_iTunesArtworkiPhone.framework */; };
 		6905581C1EA79D6000186D14 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6905581B1EA79D6000186D14 /* MovieViewController.swift */; };
 		6905581E1EA79D7B00186D14 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6905581D1EA79D7B00186D14 /* MovieCell.swift */; };
 		690558291EA856D600186D14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 690558281EA856D600186D14 /* Images.xcassets */; };
 		69745CE51EB07B3B00439BC7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69745CE71EB07B3B00439BC7 /* Localizable.strings */; };
+		69745CEC1EB491C000439BC7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69745CE91EB491C000439BC7 /* SwiftyJSON.framework */; };
+		69745CED1EB491C000439BC7 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69745CE91EB491C000439BC7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		69745CEE1EB491C000439BC7 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69745CEA1EB491C000439BC7 /* AlamofireImage.framework */; };
+		69745CEF1EB491C000439BC7 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69745CEA1EB491C000439BC7 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		69745CF01EB491C000439BC7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69745CEB1EB491C000439BC7 /* Alamofire.framework */; };
+		69745CF11EB491C000439BC7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69745CEB1EB491C000439BC7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		699F0CEA1E9E298700A3388F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699F0CE91E9E298700A3388F /* AppDelegate.swift */; };
 		699F0CEF1E9E298700A3388F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 699F0CED1E9E298700A3388F /* Main.storyboard */; };
 		699F0CF41E9E298700A3388F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 699F0CF21E9E298700A3388F /* LaunchScreen.storyboard */; };
@@ -24,14 +29,32 @@
 		A558D0BE1EACB335009BE780 /* ArtworkSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0BD1EACB335009BE780 /* ArtworkSize.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		69745CF31EB491C000439BC7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				69745CED1EB491C000439BC7 /* SwiftyJSON.framework in Embed Frameworks */,
+				69745CF11EB491C000439BC7 /* Alamofire.framework in Embed Frameworks */,
+				69745CEF1EB491C000439BC7 /* AlamofireImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		26113DBFF0982DFEACFFCFE0 /* Pods_iTunesArtworkiPhone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesArtworkiPhone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27338B776F1697C33DFA094D /* Pods-iTunesArtworkiPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesArtworkiPhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iTunesArtworkiPhone/Pods-iTunesArtworkiPhone.debug.xcconfig"; sourceTree = "<group>"; };
 		6905581B1EA79D6000186D14 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		6905581D1EA79D7B00186D14 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		690558281EA856D600186D14 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		69745CE61EB07B3B00439BC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69745CE81EB07B6700439BC7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		69745CE91EB491C000439BC7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		69745CEA1EB491C000439BC7 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		69745CEB1EB491C000439BC7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		699F0CE61E9E298700A3388F /* iTunesArtworkiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesArtworkiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699F0CE91E9E298700A3388F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		699F0CEE1E9E298700A3388F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,11 +71,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		699F0CE31E9E298700A3388F /* Frameworks */ = {
+		69745CF21EB491C000439BC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42241352B3293C1A0F35BC3F /* Pods_iTunesArtworkiPhone.framework in Frameworks */,
+				69745CEC1EB491C000439BC7 /* SwiftyJSON.framework in Frameworks */,
+				69745CF01EB491C000439BC7 /* Alamofire.framework in Frameworks */,
+				69745CEE1EB491C000439BC7 /* AlamofireImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +159,9 @@
 		9591E0E90B23012F9411BE0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				26113DBFF0982DFEACFFCFE0 /* Pods_iTunesArtworkiPhone.framework */,
+				69745CE91EB491C000439BC7 /* SwiftyJSON.framework */,
+				69745CEA1EB491C000439BC7 /* AlamofireImage.framework */,
+				69745CEB1EB491C000439BC7 /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,12 +190,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 699F0CF81E9E298700A3388F /* Build configuration list for PBXNativeTarget "iTunesArtworkiPhone" */;
 			buildPhases = (
-				18B017EDED11ADB5E598255C /* [CP] Check Pods Manifest.lock */,
 				699F0CE21E9E298700A3388F /* Sources */,
-				699F0CE31E9E298700A3388F /* Frameworks */,
 				699F0CE41E9E298700A3388F /* Resources */,
-				29FA8220C413F88E84100DA7 /* [CP] Embed Pods Frameworks */,
-				C8CA103CAF710D4EA875B1B2 /* [CP] Copy Pods Resources */,
+				69745CF21EB491C000439BC7 /* Frameworks */,
+				69745CF31EB491C000439BC7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,54 +253,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		18B017EDED11ADB5E598255C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		29FA8220C413F88E84100DA7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iTunesArtworkiPhone/Pods-iTunesArtworkiPhone-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C8CA103CAF710D4EA875B1B2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iTunesArtworkiPhone/Pods-iTunesArtworkiPhone-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		699F0CE21E9E298700A3388F /* Sources */ = {
@@ -430,6 +407,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = ZF2L8YKC2B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = iTunesArtworkiPhone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = s10284tk.iTunesArtworkiPhone;
@@ -445,6 +426,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = ZF2L8YKC2B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = iTunesArtworkiPhone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = s10284tk.iTunesArtworkiPhone;
