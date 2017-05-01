@@ -49,20 +49,34 @@ internal enum ArtworkSize {
             return NSLocalizedString("large", comment: "")
         }
     }
-    var itunesSize: String {
+}
+
+internal enum api {
+    case itunes
+    case imdb
+    
+    var size: String {
         switch self {
-        case .medium:
-            return "1500x1500bb.jpg"
-        case .large:
-            return "100000x100000-999.jpg"
-        }
-    }
-    var imdbSize: String {
-        switch self {
-        case .medium:
-            return "1000.jpg"
-        case .large:
-            return "1500.jpg"
+        case .itunes:
+            switch DeviceData.imageSizeRawValue {
+            case 0:
+                return "1500x1500bb.jpg"
+            case 1:
+                return "100000x100000-999.jpg"
+            default:
+                assertionFailure()
+                return "1500x1500bb.jpg"
+            }
+        case .imdb:
+            switch DeviceData.imageSizeRawValue {
+            case 0:
+                return "1000.jpg"
+            case 1:
+                return "1500.jpg"
+            default:
+                assertionFailure()
+                return "1000.jpg"
+            }
         }
     }
 }

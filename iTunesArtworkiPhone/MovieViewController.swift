@@ -128,22 +128,10 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
                 guard let urlurl = cell.itemUrl else{
                     return
                 }
-                switch DeviceData.imageSizeRawValue {
-                case 0:
-                    if urlurl.contains("60x60bb.jpg"){
-                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "60x60bb.jpg", with: ArtworkSize.medium.itunesSize)
-                    } else {
-                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "300.jpg", with: ArtworkSize.medium.imdbSize)
-                    }
-                case 1:
-                    if urlurl.contains("60x60bb.jpg"){
-                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "60x60bb.jpg", with: ArtworkSize.large.itunesSize)
-                    } else {
-                        webViewController.itemUrl = urlurl.replacingOccurrences(of: "300.jpg", with: ArtworkSize.large.imdbSize)
-                    }
-                default:
-                    assertionFailure("ここには来ないはず")
-                    webViewController.itemUrl = urlurl
+                if urlurl.contains("60x60bb.jpg"){
+                    webViewController.itemUrl = urlurl.replacingOccurrences(of: "60x60bb.jpg", with: api.itunes.size)
+                } else {
+                    webViewController.itemUrl = urlurl.replacingOccurrences(of: "300.jpg", with: api.imdb.size)
                 }
                 print(cell.itemUrl ?? "error")
                 webViewController.navigationItem.title = cell.trackTitle.text
