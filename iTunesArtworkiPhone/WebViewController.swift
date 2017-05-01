@@ -10,28 +10,17 @@ import UIKit
 import AlamofireImage
 import Alamofire
 
-internal final class WebViewController: UIViewController {
+internal final class WebViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet private weak var webView: UIWebView!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     var itemUrl: String?
     private var itemImage: UIImage?
     private let board = UIPasteboard.general
     
-    
-    
     // ボタン押したとき
     @IBAction private func buttonPush(_ sender: Any) {
-        
-        // アラートを作成
-        //    let alert = UIAlertController(
-        //      title: "完了",
-        //      message: "クリップボードに送りました",
-        //      preferredStyle: .alert)
-        //
-        //    alert.addAction(UIAlertAction(title: "OK", style: .default))
-        //    self.present(alert, animated: true, completion: nil)
-        
         Alamofire.request(itemUrl!).responseImage { response in
             debugPrint(response)
             if let image = response.result.value {
@@ -45,7 +34,8 @@ internal final class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        webView.delegate = self
+        activity.hidesWhenStopped = true
         guard let urlurl = itemUrl else {
             return
         }
@@ -54,13 +44,15 @@ internal final class WebViewController: UIViewController {
         }
         let request = URLRequest(url: url)
         webView.loadRequest(request)
+        activity.startAnimating()
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        self.activity.stopAnimating()
+    }
     
 }

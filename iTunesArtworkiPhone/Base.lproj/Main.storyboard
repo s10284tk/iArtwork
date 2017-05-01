@@ -167,11 +167,16 @@
                                     <action selector="buttonPush:" destination="tZB-S4-7IE" eventType="touchUpInside" id="56B-Yr-5sf"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DqS-e2-Lmb">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DqS-e2-Lmb" firstAttribute="centerX" secondItem="I8I-ej-Klr" secondAttribute="centerX" id="4bb-vR-VfV"/>
                             <constraint firstItem="lo6-uL-eMQ" firstAttribute="top" secondItem="SMd-40-FoJ" secondAttribute="bottom" id="BXL-g1-dXU"/>
                             <constraint firstItem="lo6-uL-eMQ" firstAttribute="top" secondItem="Taf-R8-DNg" secondAttribute="bottom" constant="20" id="EDF-BI-gyu"/>
+                            <constraint firstItem="DqS-e2-Lmb" firstAttribute="centerY" secondItem="I8I-ej-Klr" secondAttribute="centerY" id="Lfd-9W-yeq"/>
                             <constraint firstItem="SMd-40-FoJ" firstAttribute="leading" secondItem="I8I-ej-Klr" secondAttribute="leading" id="Qar-aJ-t8q"/>
                             <constraint firstItem="SMd-40-FoJ" firstAttribute="top" secondItem="LfF-Sa-U1s" secondAttribute="bottom" id="a21-fB-opy"/>
                             <constraint firstItem="Taf-R8-DNg" firstAttribute="leading" secondItem="I8I-ej-Klr" secondAttribute="leading" constant="20" id="hvc-sB-YiS"/>
@@ -179,6 +184,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activity" destination="DqS-e2-Lmb" id="iBb-PZ-JfY"/>
                         <outlet property="webView" destination="SMd-40-FoJ" id="ABy-Wt-ACF"/>
                     </connections>
                 </viewController>
