@@ -13,7 +13,8 @@ import Alamofire
 internal final class WebViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet private weak var webView: UIWebView!
-    @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet private weak var activity: UIActivityIndicatorView!
+    @IBOutlet private weak var button: UIButton!
     
     var itemUrl: String?
     private var itemImage: UIImage?
@@ -35,7 +36,14 @@ internal final class WebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.delegate = self
+        //activityIndicatorの設定
         activity.hidesWhenStopped = true
+        activity.startAnimating()
+        //ボタンの影設定
+        button.layer.shadowOpacity = 0.8
+        button.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        button.layer.shadowRadius = 2
+        //URLのロード
         guard let urlurl = itemUrl else {
             return
         }
@@ -44,13 +52,13 @@ internal final class WebViewController: UIViewController, UIWebViewDelegate {
         }
         let request = URLRequest(url: url)
         webView.loadRequest(request)
-        activity.startAnimating()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    //webViewのロード終わったらactivityIndicatorを止める
     func webViewDidFinishLoad(_ webView: UIWebView) {
         self.activity.stopAnimating()
     }

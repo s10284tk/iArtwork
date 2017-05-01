@@ -185,6 +185,7 @@
                     </view>
                     <connections>
                         <outlet property="activity" destination="DqS-e2-Lmb" id="iBb-PZ-JfY"/>
+                        <outlet property="button" destination="Taf-R8-DNg" id="y43-Ra-3L7"/>
                         <outlet property="webView" destination="SMd-40-FoJ" id="ABy-Wt-ACF"/>
                     </connections>
                 </viewController>
