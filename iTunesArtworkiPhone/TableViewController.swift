@@ -24,10 +24,6 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
         super.didReceiveMemoryWarning()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touch")
-    }
-    
     //サーチボタンが押された時動くやつ
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
@@ -84,14 +80,7 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
             if let webViewController = segue.destination as? WebViewController {
                 
                 //サイズによってURLを置換
-                switch DeviceData.imageSizeRawValue {
-                case 0:
-                    webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: ArtworkSize.medium.itunesSize)
-                case 1:
-                    webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: ArtworkSize.large.itunesSize)
-                default:
-                    webViewController.itemUrl = cell.itemUrl
-                }
+                webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: ArtworkSize.currentSize.sizeString(at: .itunes))
                 print(cell.itemUrl ?? "error")
                 webViewController.navigationItem.title = cell.trackTitle.text
             }
