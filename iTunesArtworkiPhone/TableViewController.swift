@@ -80,7 +80,7 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
             if let webViewController = segue.destination as? WebViewController {
                 
                 //サイズによってURLを置換
-                webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: api.itunes.size)
+                webViewController.itemUrl = cell.itemUrl?.replacingOccurrences(of: "60x60bb.jpg", with: ArtworkSize.currentSize.sizeString(at: .itunes))
                 print(cell.itemUrl ?? "error")
                 webViewController.navigationItem.title = cell.trackTitle.text
             }

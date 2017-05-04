@@ -125,13 +125,14 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
             if let webViewController = segue.destination as? WebViewController {
                 
                 //サイズによってURLを置換
-                guard let urlurl = cell.itemUrl else{
+                guard let itemUrl = cell.itemUrl else{
                     return
                 }
-                if urlurl.contains("60x60bb.jpg"){
-                    webViewController.itemUrl = urlurl.replacingOccurrences(of: "60x60bb.jpg", with: api.itunes.size)
+                let currentSize = ArtworkSize.currentSize
+                if itemUrl.contains("60x60bb.jpg"){
+                    webViewController.itemUrl = itemUrl.replacingOccurrences(of: "60x60bb.jpg", with: currentSize.sizeString(at: .itunes))
                 } else {
-                    webViewController.itemUrl = urlurl.replacingOccurrences(of: "300.jpg", with: api.imdb.size)
+                    webViewController.itemUrl = itemUrl.replacingOccurrences(of: "300.jpg", with: currentSize.sizeString(at: .imdb))
                 }
                 print(cell.itemUrl ?? "error")
                 webViewController.navigationItem.title = cell.trackTitle.text
