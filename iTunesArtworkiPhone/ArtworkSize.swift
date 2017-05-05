@@ -43,10 +43,10 @@ internal enum ArtworkSize {
     var title: String {
         switch self {
         case .medium:
-            return NSLocalizedString("medium", comment: "")
+            return R.string.localizable.medium()
             
         case .large:
-            return NSLocalizedString("large", comment: "")
+            return R.string.localizable.large()
         }
     }
     
