@@ -28,3 +28,5 @@ DerivedData
 Carthage/Checkouts
 Carthage/Build
 
+# R.swift
+*.generated.swift
