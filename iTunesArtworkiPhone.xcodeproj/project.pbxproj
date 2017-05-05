@@ -29,7 +29,7 @@
 		A558D0BE1EACB335009BE780 /* ArtworkSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0BD1EACB335009BE780 /* ArtworkSize.swift */; };
 		A569BD611EBCB68000DB378F /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A569BD601EBCB68000DB378F /* Rswift.framework */; };
 		A569BD621EBCB68000DB378F /* Rswift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A569BD601EBCB68000DB378F /* Rswift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A569BD661EBCB89F00DB378F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569BD651EBCB89F00DB378F /* R.generated.swift */; };
+		A569BD681EBCBC8200DB378F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569BD671EBCBC8200DB378F /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,7 +71,7 @@
 		A558D0BA1EACAD39009BE780 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		A558D0BD1EACB335009BE780 /* ArtworkSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkSize.swift; sourceTree = "<group>"; };
 		A569BD601EBCB68000DB378F /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
-		A569BD651EBCB89F00DB378F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		A569BD671EBCBC8200DB378F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,7 @@
 		699F0CE81E9E298700A3388F /* iTunesArtworkiPhone */ = {
 			isa = PBXGroup;
 			children = (
-				A569BD651EBCB89F00DB378F /* R.generated.swift */,
+				A569BD671EBCBC8200DB378F /* R.generated.swift */,
 				699F0CED1E9E298700A3388F /* Main.storyboard */,
 				690558191EA636D400186D14 /* MusicView */,
 				6905581A1EA79D1E00186D14 /* MovieView */,
@@ -298,7 +298,7 @@
 				699F0CEA1E9E298700A3388F /* AppDelegate.swift in Sources */,
 				69AACB061E9E303700443DBF /* TableViewController.swift in Sources */,
 				A558D0B81EAC5BEF009BE780 /* DeviceData.swift in Sources */,
-				A569BD661EBCB89F00DB378F /* R.generated.swift in Sources */,
+				A569BD681EBCBC8200DB378F /* R.generated.swift in Sources */,
 				69AACB081E9E49AA00443DBF /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
