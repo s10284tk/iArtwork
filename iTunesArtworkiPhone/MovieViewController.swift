@@ -95,7 +95,7 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
     
     //tableViewを設定
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as? MovieCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieItemCell", for: indexPath) as? MovieCell else {
             return UITableViewCell()
         }
         
