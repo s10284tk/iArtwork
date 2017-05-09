@@ -61,7 +61,7 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
     
     //tableViewを設定
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as? ItemTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "musicItemCell", for: indexPath) as? ItemTableViewCell else {
             return UITableViewCell()
         }
         cell.trackTitle.text = listArray[indexPath.row].name
