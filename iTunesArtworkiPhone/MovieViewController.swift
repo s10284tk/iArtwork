@@ -9,14 +9,11 @@
 import UIKit
 import Alamofire
 import AlamofireImage
-import SwiftyJSON
 
 internal final class MovieViewController: UITableViewController, UISearchBarDelegate {
     
     // タプル配列
-    private var listArray: [(name: String, url: String)] = []
-    private var listArray2: [(name: String, url: String)] = []
-    private let section: [String] = ["iTunes", "IMDb"]
+    private var listArray = [(name: String, url: String)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,66 +28,57 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
         searchBar.resignFirstResponder()
         //初期化
         listArray.removeAll()
-        listArray2.removeAll()
         self.tableView.reloadData()
         //国選択
         let country = Country.currentCountry.requestParameter
         
+        //Codable準備
+        struct Json: Codable {
+            let results: [SongData]
+            struct SongData: Codable{
+                let trackCensoredName: String
+                let artistName: String
+                let artworkUrl60: String
+            }
+        }
+        
+        print("押したよ")
+        
         if let search = searchBar.text {
             let listUrl = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch?"
-            let listUrlIMDB = "http://www.omdbapi.com/?"
-            
             Alamofire.request(listUrl, parameters: [
                 "term": search,
                 "country": country,
                 "entity": "movie"
                 ])
-                .responseJSON{ response in
-                    let json = JSON(response.result.value ?? 0)
-                    json["results"].forEach{ _, data in
-                        let name: String = data["trackCensoredName"].stringValue
-                        let url: String = data["artworkUrl60"].stringValue
-                        let list = (name, url)
-                        self.listArray.append(list)
-                        self.tableView.insertRows(at: [IndexPath(row: self.listArray.count - 1, section: 0)], with: .right)
+                .responseData{ response in
+                    // codableでデコード
+                    guard let jsonData = response.result.value else {
+                        print("data is nil")
+                        return
                     }
+                    let decoder: JSONDecoder = JSONDecoder()
+                    do {
+                        let decodedJson: Json = try decoder.decode(Json.self, from: jsonData)
+                        for (_, element) in decodedJson.results.enumerated(){
+                            let name: String = element.trackCensoredName
+                            let url: String = element.artworkUrl60
+                            let list = (name, url)
+                            self.listArray.append(list)
+                            self.tableView.insertRows(at: [IndexPath(row: self.listArray.count - 1, section: 0)], with: .right)
+                        }
+                    } catch {
+                        print("json decode faild")
+                }
             }
-            
-            Alamofire.request(listUrlIMDB, parameters: [
-                "s": search
-                ])
-                .responseJSON{response in
-                    let json = JSON(response.result.value ?? 0)
-                    json["Search"].forEach{(i, data) in
-                        let name2 : String = data["Title"].stringValue
-                        let url2 : String = data["Poster"].stringValue
-                        let list2 = (name2, url2)
-                        self.listArray2.append(list2)
-                        self.tableView.insertRows(at: [IndexPath(row: self.listArray2.count - 1, section: 1)], with: .right)
-                    }
-            }
+        } else {
+            print("searchBar text is nil")
         }
     }
     
     //rowの数を設定
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
             return listArray.count
-        case 1:
-            return listArray2.count
-        default:
-            return 0
-        }
-    }
-    
-    //sectionの数を設定
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return section.count
-    }
-    //sectionのタイトル
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.section[section]
     }
     
     //tableViewを設定
@@ -98,23 +86,11 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieItemCell", for: indexPath) as? MovieCell else {
             return UITableViewCell()
         }
-        
-        switch indexPath.section {
-        case 0:
             cell.trackTitle.text = listArray[indexPath.row].name
             cell.itemUrl = listArray[indexPath.row].url
             cell.accessoryType = .disclosureIndicator
             let URL = NSURL(string: listArray[indexPath.row].url.replacingOccurrences(of: "60x60bb.jpg", with: "600x600bb.jpg"))!
             cell.itemImageView.af_setImage(withURL: URL as URL)
-        case 1:
-            cell.trackTitle.text = listArray2[indexPath.row].name
-            cell.itemUrl = listArray2[indexPath.row].url
-            cell.accessoryType = .disclosureIndicator
-            let URL = NSURL(string: listArray2[indexPath.row].url)!
-            cell.itemImageView.af_setImage(withURL: URL as URL)
-        default:
-            break
-        }
         
         return cell
     }
@@ -123,7 +99,6 @@ internal final class MovieViewController: UITableViewController, UISearchBarDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? MovieCell {
             if let webViewController = segue.destination as? WebViewController {
-                
                 //サイズによってURLを置換
                 guard let itemUrl = cell.itemUrl else{
                     return

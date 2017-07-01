@@ -11,8 +11,6 @@
 		6905581E1EA79D7B00186D14 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6905581D1EA79D7B00186D14 /* MovieCell.swift */; };
 		690558291EA856D600186D14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 690558281EA856D600186D14 /* Images.xcassets */; };
 		69745CE51EB07B3B00439BC7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69745CE71EB07B3B00439BC7 /* Localizable.strings */; };
-		69745CEC1EB491C000439BC7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69745CE91EB491C000439BC7 /* SwiftyJSON.framework */; };
-		69745CED1EB491C000439BC7 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69745CE91EB491C000439BC7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69745CEE1EB491C000439BC7 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69745CEA1EB491C000439BC7 /* AlamofireImage.framework */; };
 		69745CEF1EB491C000439BC7 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69745CEA1EB491C000439BC7 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69745CF01EB491C000439BC7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69745CEB1EB491C000439BC7 /* Alamofire.framework */; };
@@ -39,7 +37,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				69745CED1EB491C000439BC7 /* SwiftyJSON.framework in Embed Frameworks */,
 				69745CF11EB491C000439BC7 /* Alamofire.framework in Embed Frameworks */,
 				69745CEF1EB491C000439BC7 /* AlamofireImage.framework in Embed Frameworks */,
 				A569BD621EBCB68000DB378F /* Rswift.framework in Embed Frameworks */,
@@ -55,7 +52,6 @@
 		690558281EA856D600186D14 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		69745CE61EB07B3B00439BC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69745CE81EB07B6700439BC7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		69745CE91EB491C000439BC7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		69745CEA1EB491C000439BC7 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		69745CEB1EB491C000439BC7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		699F0CE61E9E298700A3388F /* iTunesArtworkiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesArtworkiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69745CEC1EB491C000439BC7 /* SwiftyJSON.framework in Frameworks */,
 				69745CF01EB491C000439BC7 /* Alamofire.framework in Frameworks */,
 				69745CEE1EB491C000439BC7 /* AlamofireImage.framework in Frameworks */,
 				A569BD611EBCB68000DB378F /* Rswift.framework in Frameworks */,
@@ -156,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				A569BD601EBCB68000DB378F /* Rswift.framework */,
-				69745CE91EB491C000439BC7 /* SwiftyJSON.framework */,
 				69745CEA1EB491C000439BC7 /* AlamofireImage.framework */,
 				69745CEB1EB491C000439BC7 /* Alamofire.framework */,
 			);
@@ -210,12 +204,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = piyo;
 				TargetAttributes = {
 					699F0CE51E9E298700A3388F = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = ZF2L8YKC2B;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -345,7 +340,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -353,7 +350,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -397,7 +398,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -405,7 +408,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -445,8 +452,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = s10284tk.iTunesArtworkiPhone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -464,7 +472,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = s10284tk.iTunesArtworkiPhone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				SWIFT_WHOLE_MODULE_OPTIMIZATION = "";
 			};
 			name = Release;

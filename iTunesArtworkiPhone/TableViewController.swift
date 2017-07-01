@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import AlamofireImage
-import SwiftyJSON
 
 internal final class TableViewController: UITableViewController, UISearchBarDelegate{
     
@@ -29,10 +28,20 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
         searchBar.resignFirstResponder()
         //初期化
         listArray.removeAll()
-        self.tableView.reloadData()
+        self.tableView.reloadData()        
         
         //国選択
         let country = Country.currentCountry.requestParameter
+        
+        struct Json: Codable {
+            let results: [SongData]
+            struct SongData: Codable{
+                let trackCensoredName: String
+                let artistName: String
+                let collectionCensoredName: String
+                let artworkUrl60: String
+            }
+        }
         
         if let search = searchBar.text {
             let listUrl = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch?"
@@ -41,16 +50,28 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
                 "country": country,
                 "entity": "musicTrack"
                 ])
-                .responseJSON{ response in
-                    let json = JSON(response.result.value ?? 0)
-                    json["results"].forEach{(i, data) in
-                        let name: String = data["trackCensoredName"].stringValue
-                        let url: String = data["artworkUrl60"].stringValue
-                        let list = (name, url)
-                        self.listArray.append(list)
-                        self.tableView.insertRows(at: [IndexPath(row: self.listArray.count - 1, section: 0)], with: .right)
+                .responseData{ response in
+                    // codableでデコード
+                    guard let jsonData = response.result.value else {
+                        print("data is nil")
+                        return
                     }
+                    let decoder: JSONDecoder = JSONDecoder()
+                    do {
+                        let decodedJson: Json = try decoder.decode(Json.self, from: jsonData)
+                        for (_, element) in decodedJson.results.enumerated(){
+                            let name: String = element.trackCensoredName
+                            let url: String = element.artworkUrl60
+                            let list = (name, url)
+                            self.listArray.append(list)
+                            self.tableView.insertRows(at: [IndexPath(row: self.listArray.count - 1, section: 0)], with: .right)
+                        }
+                    } catch {
+                        print("json decode faild")
+                }
             }
+        } else {
+            print("searchBar text is nil")
         }
     }
     
