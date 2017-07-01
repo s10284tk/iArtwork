@@ -13,7 +13,7 @@ import AlamofireImage
 internal final class TableViewController: UITableViewController, UISearchBarDelegate{
     
     // タプル配列
-    private var listArray: [(name: String, url: String)] = []
+    private var listArray = [(name: String, url: String)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
