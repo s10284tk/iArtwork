@@ -44,6 +44,9 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
         }
         
         if let search = searchBar.text {
+            
+            ActivityIndicator.shared.start()
+            
             let listUrl = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch?"
             Alamofire.request(listUrl, parameters: [
                 "term": search,
@@ -51,6 +54,9 @@ internal final class TableViewController: UITableViewController, UISearchBarDele
                 "entity": "musicTrack"
                 ])
                 .responseData{ response in
+                    
+                    ActivityIndicator.shared.stop()
+                    
                     // codableでデコード
                     guard let jsonData = response.result.value else {
                         print("data is nil")
