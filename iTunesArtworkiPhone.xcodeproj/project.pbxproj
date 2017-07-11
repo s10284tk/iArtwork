@@ -28,6 +28,7 @@
 		A558D0BE1EACB335009BE780 /* ArtworkSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0BD1EACB335009BE780 /* ArtworkSize.swift */; };
 		A569BD611EBCB68000DB378F /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A569BD601EBCB68000DB378F /* Rswift.framework */; };
 		A569BD621EBCB68000DB378F /* Rswift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A569BD601EBCB68000DB378F /* Rswift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8FB3E541F13E67A005E1844 /* ActivityIndicator+StartStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FB3E531F13E67A005E1844 /* ActivityIndicator+StartStop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +69,7 @@
 		A558D0BA1EACAD39009BE780 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		A558D0BD1EACB335009BE780 /* ArtworkSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkSize.swift; sourceTree = "<group>"; };
 		A569BD601EBCB68000DB378F /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
+		D8FB3E531F13E67A005E1844 /* ActivityIndicator+StartStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+StartStop.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				A558D0B91EACAD03009BE780 /* Model */,
 				A558D0BC1EACB0A0009BE780 /* enumeration */,
 				69AACB071E9E49AA00443DBF /* WebViewController.swift */,
+				D8FB3E531F13E67A005E1844 /* ActivityIndicator+StartStop.swift */,
 				699F0CE91E9E298700A3388F /* AppDelegate.swift */,
 				699F0CF21E9E298700A3388F /* LaunchScreen.storyboard */,
 				699F0CF51E9E298700A3388F /* Info.plist */,
@@ -295,6 +298,7 @@
 				A558D0B81EAC5BEF009BE780 /* DeviceData.swift in Sources */,
 				69B9A55C1EBCBDF000EB980F /* R.generated.swift in Sources */,
 				69AACB081E9E49AA00443DBF /* WebViewController.swift in Sources */,
+				D8FB3E541F13E67A005E1844 /* ActivityIndicator+StartStop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
