@@ -13,7 +13,7 @@ internal enum ArtworkSize {
     case large
     
     static var currentSize: ArtworkSize {
-        return ArtworkSize.artworkSize(DeviceData.imageSizeRawValue)
+        return ArtworkSize.artworkSize(UserDefaults.standard[.imageSize] ?? 0)
     }
     
     private static func artworkSize(_ rawValue: Int) -> ArtworkSize {

@@ -23,7 +23,7 @@
 		69AACB081E9E49AA00443DBF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AACB071E9E49AA00443DBF /* WebViewController.swift */; };
 		69B9A55C1EBCBDF000EB980F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B9A55B1EBCBDF000EB980F /* R.generated.swift */; };
 		A558D0B61EAC53C7009BE780 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0B51EAC53C7009BE780 /* SettingViewController.swift */; };
-		A558D0B81EAC5BEF009BE780 /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0B71EAC5BEF009BE780 /* DeviceData.swift */; };
+		A558D0B81EAC5BEF009BE780 /* UserDefaults+subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0B71EAC5BEF009BE780 /* UserDefaults+subscript.swift */; };
 		A558D0BB1EACAD39009BE780 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0BA1EACAD39009BE780 /* Country.swift */; };
 		A558D0BE1EACB335009BE780 /* ArtworkSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558D0BD1EACB335009BE780 /* ArtworkSize.swift */; };
 		A569BD611EBCB68000DB378F /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A569BD601EBCB68000DB378F /* Rswift.framework */; };
@@ -65,7 +65,7 @@
 		69AACB071E9E49AA00443DBF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		69B9A55B1EBCBDF000EB980F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		A558D0B51EAC53C7009BE780 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		A558D0B71EAC5BEF009BE780 /* DeviceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
+		A558D0B71EAC5BEF009BE780 /* UserDefaults+subscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+subscript.swift"; sourceTree = "<group>"; };
 		A558D0BA1EACAD39009BE780 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		A558D0BD1EACB335009BE780 /* ArtworkSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkSize.swift; sourceTree = "<group>"; };
 		A569BD601EBCB68000DB378F /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
@@ -137,7 +137,8 @@
 				690558191EA636D400186D14 /* MusicView */,
 				6905581A1EA79D1E00186D14 /* MovieView */,
 				690558081EA35A8400186D14 /* Setting */,
-				A558D0B91EACAD03009BE780 /* Model */,
+				D8FB3E551F1B00BD005E1844 /* Extensions */,
+				A558D0B71EAC5BEF009BE780 /* UserDefaults+subscript.swift */,
 				A558D0BC1EACB0A0009BE780 /* enumeration */,
 				69AACB071E9E49AA00443DBF /* WebViewController.swift */,
 				D8FB3E531F13E67A005E1844 /* ActivityIndicator+StartStop.swift */,
@@ -160,14 +161,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A558D0B91EACAD03009BE780 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A558D0B71EAC5BEF009BE780 /* DeviceData.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		A558D0BC1EACB0A0009BE780 /* enumeration */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +168,13 @@
 				A558D0BD1EACB335009BE780 /* ArtworkSize.swift */,
 			);
 			name = enumeration;
+			sourceTree = "<group>";
+		};
+		D8FB3E551F1B00BD005E1844 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,7 +295,7 @@
 				A558D0B61EAC53C7009BE780 /* SettingViewController.swift in Sources */,
 				699F0CEA1E9E298700A3388F /* AppDelegate.swift in Sources */,
 				69AACB061E9E303700443DBF /* TableViewController.swift in Sources */,
-				A558D0B81EAC5BEF009BE780 /* DeviceData.swift in Sources */,
+				A558D0B81EAC5BEF009BE780 /* UserDefaults+subscript.swift in Sources */,
 				69B9A55C1EBCBDF000EB980F /* R.generated.swift in Sources */,
 				69AACB081E9E49AA00443DBF /* WebViewController.swift in Sources */,
 				D8FB3E541F13E67A005E1844 /* ActivityIndicator+StartStop.swift in Sources */,

@@ -13,7 +13,8 @@ internal enum Country {
     case usa
     
     static var currentCountry: Country {
-        return Country.country(DeviceData.countryRawValue)
+        
+        return Country.country(UserDefaults.standard[.country] ?? 0)
     }
     
     private static func country(_ rawValue: Int) -> Country {
