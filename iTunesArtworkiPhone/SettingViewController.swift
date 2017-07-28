@@ -13,6 +13,8 @@ internal final class SettingViewController: UIViewController {
     let countries: [Country] = [.japan, .usa]
     let imageSize: [ArtworkSize] = [.medium, .large]
     
+    private let userDefaults = UserDefaults.standard
+    
     // TODO: 本当はLocalizable.stringsを作って文字列はすべてそこに定義し、あとから変更しやすいようにすべき
     //       また、タイトルのラベルもstoryboard上ではなくoutletを引っ張ってきて↑の定義を設定する作りにすべき
     @IBOutlet weak var countrySegmentedControl: UISegmentedControl!
@@ -26,13 +28,14 @@ internal final class SettingViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     @IBAction func didChangeCountry(_ sender: UISegmentedControl) {
-        DeviceData.countryRawValue = sender.selectedSegmentIndex
+        userDefaults[.country] = sender.selectedSegmentIndex
         
         
     }
     @IBAction func didChangeArtworkSize(_ sender: UISegmentedControl) {
-        DeviceData.imageSizeRawValue = sender.selectedSegmentIndex
+        userDefaults[.imageSize] = sender.selectedSegmentIndex
     }
     
     private func setupViews() {
