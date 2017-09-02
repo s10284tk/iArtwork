@@ -31,13 +31,13 @@ internal final class UserDefaultsKey<Value: UserDefaultsValueType>: UserDefaults
 
 extension UserDefaults {
     
-    subscript<T>(key: UserDefaultsKey<T>) -> T? where T: UserDefaultsValueType {
+    subscript<Value, Key: UserDefaultsKey<Value>>(key: Key) -> Value? {
         set {
             set(newValue, forKey: key.key)
             synchronize()
         }
         get {
-            return object(forKey: key.key) as? T
+            return object(forKey: key.key) as? Value
         }
     }
     
